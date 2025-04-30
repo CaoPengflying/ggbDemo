@@ -1,0 +1,23 @@
+# 忽略所有的临时文件
+*~
+# 忽略所有的编译生成文件
+*.o
+*.a
+*.exe
+# 忽略所有的日志文件
+*.log
+# 忽略所有的备份文件
+*~
+# 忽略所有的配置文件
+*.conf
+# 忽略所有的IDE生成文件
+.idea/
+.vs/
+# 忽略所有的node_modules文件夹
+node_modules/
+# 忽略所有的bower_components文件夹
+bower_components/
+# 忽略所有的临时文件夹
+tmp/
+# 忽略所有的测试文件夹
+test/
