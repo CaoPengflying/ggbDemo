@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name=viewport content="width=device-width,initial-scale=1">
+    <title>Title</title>
+</head>
+<script src="GeoGebra/deployggb.js"></script>
+<body>
+<div id="ggb-element"></div>
+<button onclick="getAllObjects()">获取所有元素</button>
+<script>
+  var app = new GGBApplet({
+    'appName': 'geometry',
+    'showToolBar': true,
+    'showAlgebraInput': false,
+    'showMenuBar': true,
+    'showResetIcon': true,
+    //宽度设置为满屏幕
+    'width': window.innerWidth,
+    'height': 600,
+    //语言设置为中文
+    'language': 'zh',
+  }, true);
+  window.onload = function () {
+    app.inject('ggb-element');
+  };
+  
+  // 获取所有GeoGebra对象
+  function getAllObjects() {
+    // 确保GeoGebra已经完全加载
+    if (window.ggbApplet) {
+      // 获取所有对象的名称
+      var objectNames = window.ggbApplet.getAllObjectNames();
+      console.log("GeoGebra中的所有对象:", objectNames);
+      
+      // 如果需要获取每个对象的详细信息
+      objectNames.forEach(function(name) {
+        var type = window.ggbApplet.getObjectType(name);
+        console.log("对象名称:", name, "类型:", type);
+      });
+    } else {
+      console.log("GeoGebra还未完全加载");
+    }
+  }
+  // Example of using the GGB API
+  // app.evalCommand("Circle(A, 5)");
+</script>
+</body>
+</html>
